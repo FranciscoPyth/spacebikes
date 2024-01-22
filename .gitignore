@@ -1,0 +1,30 @@
+# Django
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# Virtual Environment
+venv/
+env/
+spacebikes/
+ 
+# Static files
+/static/
+
+# Media files
+/media/
+
+# Secret key
+*.secret_key
+
+# Database
+*.sqlite3
+db.sqlite3
+
+# React
+/node_modules/
+/build/
+.DS_Store
+npm-debug.log*
