@@ -1,8 +1,6 @@
 from django.contrib import admin
-from .models import Question, Proveedor, Producto, Cliente, Venta, DetalleVenta
+from .models import Proveedor, Producto, Cliente, Venta, DetalleVenta
 from django import forms
-
-admin.site.register(Question)
 
 
 class ProveedorAdminForm(forms.ModelForm):

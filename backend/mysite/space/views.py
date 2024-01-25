@@ -1,12 +1,28 @@
-from django.http import HttpResponse
-
-from .models import Question
-
-
-def index(request):
-    latest_question_list = Question.objects.order_by("-pub_date")[:5]
-    output = ", ".join([q.question_text for q in latest_question_list])
-    return HttpResponse(output)
+from .models import *
+from rest_framework import viewsets
+from .serializer import *
 
 
-# Leave the rest of the views (detail, results, vote) unchanged
+class ProveedorView(viewsets.ModelViewSet):
+    serializer_class =  ProveedorSerializer
+    queryset = Proveedor.objects.all()
+
+
+class ClienteView(viewsets.ModelViewSet):
+    serializer_class =  ClienteSerializer
+    queryset = Cliente.objects.all()
+
+
+class ProductoView(viewsets.ModelViewSet):
+    serializer_class =  ProductoSerializer
+    queryset = Producto.objects.all()
+
+
+class VentaView(viewsets.ModelViewSet):
+    serializer_class =  VentaSerializer
+    queryset = Venta.objects.all()
+
+
+class DetalleVentaView(viewsets.ModelViewSet):
+    serializer_class =  DetalleVentaSerializer
+    queryset = DetalleVenta.objects.all()

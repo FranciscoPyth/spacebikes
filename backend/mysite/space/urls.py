@@ -1,13 +1,15 @@
-from django.urls import path
+from django.urls import path, include
+from space import views
+from rest_framework import routers
 
-from . import views
+
+router = routers.DefaultRouter()
+router.register(r'proveedores', views.ProveedorView, 'proveedor')  
+router.register(r'clientes', views.ClienteView, 'cliente')
+router.register(r'productos', views.ProductoView, 'producto')
+router.register(r'ventas', views.VentaView, 'venta')
+router.register(r'detalle_ventas', views.DetalleVentaView, 'detalle_venta')
 
 urlpatterns = [
-    path("", views.index, name="index"),
-    # ex: /polls/5/
-    path("<int:question_id>/", views.detail, name="detail"),
-    # ex: /polls/5/results/
-    path("<int:question_id>/results/", views.results, name="results"),
-    # ex: /polls/5/vote/
-    path("<int:question_id>/vote/", views.vote, name="vote"),
+    path("api/v1/", include(router.urls))
 ]
