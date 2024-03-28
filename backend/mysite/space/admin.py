@@ -19,7 +19,7 @@ class ClienteAdmin(admin.ModelAdmin):
 
 @admin.register(Producto)
 class ProductoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'descripcion', 'precio', 'stock', 'categoria', 'proveedor', 'create_date')
+    list_display = ('nombre', 'descripcion', 'precio_proveedor', 'precio_consumidor', 'stock', 'categoria', 'proveedor', 'create_date', 'imagen')
     list_filter = ('categoria', 'proveedor')
     search_fields = ('nombre', 'proveedor__nombre_empresa')
 

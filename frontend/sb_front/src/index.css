@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
-  background: #202020;
-  color: white;
+  background: #FBF3BF;
+  color: #B21817;
+  font-weight: 600;
 }

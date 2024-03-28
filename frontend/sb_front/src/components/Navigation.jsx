@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 export function Navigation() {
     return (
-        <div className="flex justify-between py-3">
+        <div className="flex justify-between py-3" style={{ padding: "20px" }}>
             <Link to="/productos">
                 <h1 className="font-bold text-3xl mb-4">Productos App</h1>
             </Link>
